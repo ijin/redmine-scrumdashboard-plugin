@@ -64,7 +64,7 @@ module DashboardHelper
       "<b>#{l(:field_assigned_to)}:</b> #{issue.assigned_to}<br/>" +
       "<b>#{l(:field_priority)}:</b> #{issue.priority.name}" +
       "\");' onmouseout='closetooltip();'>"
-    html += link_to("#<strong>#{issue.id}</strong>: #{issue.subject}", {:controller => 'issues',
+    html += link_to("#<strong>#{issue.id}</strong>: #{issue.subject} <hr /> #{progress_bar issue.done_ratio, :width => '30px', :legend => issue.assigned_to}", {:controller => 'issues',
       :action => 'show', :id => issue}, {"style" => "color:#{dbtracker.textcolor}", "onmousedown" => "wasdragged = false;",
       "onmouseup" => "if(wasdragged){this.href='javascript:void(0)';}"})
     html += "</div>"
