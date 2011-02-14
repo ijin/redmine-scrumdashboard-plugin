@@ -11,5 +11,5 @@ Redmine::Plugin.register :redmine_scrumdashboard do
     permission :edit_dashboard, { :dashboard => :settings }, :public => false
   end
 
-  menu :project_menu, :dashboard, { :controller => 'dashboard', :action => 'index' }, :caption => 'Dashboard', :after => :activity, :param => :id
+  menu :project_menu, :dashboard, { :controller => 'dashboard', :action => 'index' }, :caption => :label_dashboard, :after => :activity, :param => :id
 end
